@@ -1,16 +1,17 @@
-**This repository is looking for a maintainer! If you believe you are the right person, please [leave a comment](https://github.com/tjwoon/csZBar/issues/60)!**
 
-
-
-# ZBar Barcode Scanner Plugin
+# Customized ZBar Barcode Scanner Plugin for Android only
 
 This plugin integrates with the [ZBar](http://zbar.sourceforge.net/) library,
 exposing a JavaScript interface for scanning barcodes (QR Code, EAN-13/UPC-A, UPC-E, EAN-8, Code 128, Code 39, Interleaved 2 of 5, etc).
-In this fork a button has been added to turn off and on device flash. In addition the plugin can now handle the device orientation change.
+
+This plugin is forked from https://github.com/tjwoon/csZBar and customized to add following changes :
+1) Back button on top ofthe header.
+2) Scanner view with red boundary and translucent view outside.
+3) "SCAN BARCODE" text below the scanner view.
 
 ## Installation
 
-    cordova plugin add cordova-plugin-cszbar
+    cordova plugin add https://github.com/Appalope/csZBar.git
 
 ## API
 
@@ -24,11 +25,8 @@ Arguments:
 
     ```javascript
     {
-        text_title: "OPTIONAL Title Text - default = 'Scan QR Code'", // Android only
-        text_instructions: "OPTIONAL Instruction Text - default = 'Please point your camera at the QR code.'", // Android only
         camera: "front" || "back" // defaults to "back"
         flash: "on" || "off" || "auto" // defaults to "auto". See Quirks
-        drawSight: true || false //defaults to true, create a red sight/line in the center of the scanner view.
     }
     ```
 
@@ -44,14 +42,8 @@ Return:
 Status:
 
 - Android: DONE
-- iOS: DONE
-
 
 ## LICENSE [Apache 2.0](LICENSE.md)
 
 This plugin is released under the Apache 2.0 license, but the ZBar library on which it depends (and which is distribute with this plugin) is under the LGPL license (2.1).
 
-
-## Thanks
-
-Thank you to @PaoloMessina and @nickgerman for code contributions.
